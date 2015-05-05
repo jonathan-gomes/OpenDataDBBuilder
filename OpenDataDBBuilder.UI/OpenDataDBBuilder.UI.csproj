@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F3B267D-AF43-45B3-82D2-1F73DF82C460}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenDataDBBuilder</RootNamespace>
+    <AssemblyName>OpenDataDBBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <DisallowUrlActivation>true</DisallowUrlActivation>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>27B1BD35DE6F73CDAFAF94E8B7FF6073AD3A4A69</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>OpenDataDBBuilder.UI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChangeColumnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeColumnForm.Designer.cs">
+      <DependentUpon>ChangeColumnForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBasesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataBasesForm.Designer.cs">
+      <DependentUpon>DataBasesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditDBConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDBConnectionForm.Designer.cs">
+      <DependentUpon>EditDBConnectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoErrorDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoErrorDialogForm.Designer.cs">
+      <DependentUpon>InfoErrorDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Localization.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionsDialogForm.Designer.cs">
+      <DependentUpon>OptionsDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources_pt-BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources_pt-BR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources_en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources_en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SQLPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLPreviewForm.Designer.cs">
+      <DependentUpon>SQLPreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartScreenForm.Designer.cs">
+      <DependentUpon>StartScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TablesForm.Designer.cs">
+      <DependentUpon>TablesForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChangeColumnForm.resx">
+      <DependentUpon>ChangeColumnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataBasesForm.resx">
+      <DependentUpon>DataBasesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDBConnectionForm.resx">
+      <DependentUpon>EditDBConnectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoErrorDialogForm.resx">
+      <DependentUpon>InfoErrorDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionsDialogForm.resx">
+      <DependentUpon>OptionsDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources_pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources_pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources_en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources_en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLPreviewForm.resx">
+      <DependentUpon>SQLPreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartScreenForm.pt-BR.resx">
+      <DependentUpon>StartScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartScreenForm.resx">
+      <DependentUpon>StartScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TablesForm.resx">
+      <DependentUpon>TablesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="OpenDataDBBuilder.UI_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\OpenDataDBBuilder.UI.Localization.Localization.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenDataDBBuilder.DataRepository\OpenDataDBBuilder.DataRepository.csproj">
+      <Project>{963337d4-2f83-41ab-9e9c-63309db7b89e}</Project>
+      <Name>OpenDataDBBuilder.DataRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenDataDBBuilder.UI.Components\OpenDataDBBuilder.UI.Components.csproj">
+      <Project>{9768FF46-1509-4B32-9B23-5DB183D8A348}</Project>
+      <Name>OpenDataDBBuilder.UI.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenDataDBBuilder.Business\OpenDataDBBuilder.Business.csproj">
+      <Project>{79b9f9ae-daa5-4218-8247-b72741bf258d}</Project>
+      <Name>OpenDataDBBuilder.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\imgs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_jwg_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icooddb_gZx_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icooddb_gZx_4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icooddb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="OpenDataDBBuilder.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="OpenDataDBBuilderController.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
