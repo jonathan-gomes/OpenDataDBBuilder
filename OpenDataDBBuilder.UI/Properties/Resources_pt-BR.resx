@@ -210,4 +210,34 @@
   <data name="ChangeColumnForm" xml:space="preserve">
     <value>Editar Colunas</value>
   </data>
+  <data name="lblColumnText" xml:space="preserve">
+    <value>Coluna</value>
+  </data>
+  <data name="lblTypeText" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="CreateTablesForm" xml:space="preserve">
+    <value>Criação das Tabelas</value>
+  </data>
+  <data name="lblDataBases" xml:space="preserve">
+    <value>Bancos:</value>
+  </data>
+  <data name="lblTables" xml:space="preserve">
+    <value>Tabelas:</value>
+  </data>
+  <data name="AddDBForm" xml:space="preserve">
+    <value>Novo banco de dados</value>
+  </data>
+  <data name="noDBMsg" xml:space="preserve">
+    <value>Nenhum banco selecionado!</value>
+  </data>
+  <data name="noSQLMsg" xml:space="preserve">
+    <value>Sem SQL para criação das tabelas!</value>
+  </data>
+  <data name="table" xml:space="preserve">
+    <value>Tabela </value>
+  </data>
+  <data name="errorMsgFK" xml:space="preserve">
+    <value>Complete a FK da coluna {0}</value>
+  </data>
 </root>

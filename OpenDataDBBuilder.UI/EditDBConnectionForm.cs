@@ -62,14 +62,14 @@ namespace OpenDataDBBuilder.UI
 
         private void btnTest_Click_1(object sender, EventArgs e)
         {
-            DatabaseChooser databaseChooser = new DatabaseChooser();
+            DatabaseHelper dbHelper = new DatabaseHelper(db);
             StringBuilder conn = new StringBuilder("Server={0};Port={1};Uid={2};Pwd={3};");
             conn.Replace("{0}", txbServer.Text);
             conn.Replace("{1}", txbPort.Text);
             conn.Replace("{2}", txbUser.Text);
             conn.Replace("{3}", txbPassword.Text);
 
-            if (databaseChooser.isConnectionAvailable(db, conn.ToString()))
+            if (dbHelper.isConnectionAvailable(db, conn.ToString()))
             {
                 this.lblTestResult.Text = testSuccess;
                 this.lblTestResult.ForeColor = System.Drawing.Color.Green;

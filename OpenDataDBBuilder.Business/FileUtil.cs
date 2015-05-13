@@ -21,6 +21,7 @@ namespace OpenDataDBBuilder.Business.File.Util
                 {
                     Byte[] info = new UTF8Encoding(true).GetBytes(content);
                     fs.Write(info, 0, info.Length);
+                    fs.Close();
                 }
             }
 
@@ -36,6 +37,7 @@ namespace OpenDataDBBuilder.Business.File.Util
                 {
                     Byte[] info = new UTF8Encoding(true).GetBytes(content);
                     fs.Write(info, 0, info.Length);
+                    fs.Close();
                 }
             }
 
@@ -53,6 +55,7 @@ namespace OpenDataDBBuilder.Business.File.Util
                 file.Add(line);
                 counter++;
             }
+            reader.Close();
             return file;
         }
         public static int countLines(String filePath)

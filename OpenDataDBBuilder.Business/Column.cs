@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenDataDBBuilder.Business.VO;
 
 namespace OpenDataDBBuilder.Business.DB.VO
 {
@@ -18,7 +19,7 @@ namespace OpenDataDBBuilder.Business.DB.VO
             this.sqlType = "VARCHAR(40)";
         }
 
-        public Column(String ColumnName, Boolean IsPK, Boolean IsFK, Boolean IsIDGenerated, String Reference)
+        public Column(String ColumnName, Boolean IsPK, Boolean IsFK, Boolean IsIDGenerated, KeyValue Reference)
         {
             this.ColumnName = ColumnName;
             this.IsPK = IsPK;
@@ -38,7 +39,7 @@ namespace OpenDataDBBuilder.Business.DB.VO
         public Boolean IsPK { get; set; }
         public Boolean IsFK { get; set; }
         public Boolean IsIDGenerated { get; set; }
-        public String Reference { get; set; }
+        public KeyValue Reference { get; set; }
         public String sqlType { get; set; }
     }
 }

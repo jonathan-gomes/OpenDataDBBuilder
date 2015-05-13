@@ -11,11 +11,13 @@ using OpenDataDBBuilder.Business.DB.VO;
 using OpenDataDBBuilder.Business.VO;
 using OpenDataDBBuilder.UI.Components;
 using OpenDataDBBuilder.Business.File.XML.Util;
+using OpenDataDBBuilder.Business.File.Util;
+using OpenDataDBBuilder.Business.DB;
 
 using System.Globalization;
 using System.Threading;
 using OpenDataDBBuilder.UI.Localization;
-using OpenDataDBBuilder.Business.File.Util;
+
 
 
 namespace OpenDataDBBuilder.UI
@@ -36,6 +38,7 @@ namespace OpenDataDBBuilder.UI
             getLocalizedLabelsMessages();
             this.Icon = Properties.Resources.icooddb;
             createTablesTabsView(tables);
+            updateSQLCreateTables();
             getDefaultValues();
         }
 
@@ -167,9 +170,7 @@ namespace OpenDataDBBuilder.UI
             this.tsiTables.Text = loc.getLocalizedResource(language, this.tsiTables.Name);
             this.tsiEditColumns.Text = loc.getLocalizedResource(language, this.tsiEditColumns.Name);
             this.tsiCreate.Text = loc.getLocalizedResource(language, this.tsiCreate.Name);
-            this.tsiPreviewSQL.Text = loc.getLocalizedResource(language, this.tsiPreviewSQL.Name);
             this.tsiTablesEdit.Text = loc.getLocalizedResource(language, this.tsiTablesEdit.Name);
-            this.tsiCreateDatabase.Text = loc.getLocalizedResource(language, this.tsiCreateDatabase.Name);
             openFileDialogTitleMsg = loc.getLocalizedResource(language, openFileDialogTitle);
         }
 
@@ -208,53 +209,36 @@ namespace OpenDataDBBuilder.UI
         {
             ChangeColumnForm columnForm = new ChangeColumnForm(this.tables, startForm.Db);
             DialogResult result = columnForm.ShowDialog();
-            if ("OK".Equals(result.ToString()))
+            if (!"".Equals(result.ToString()))
             {
                 createTablesTabsView(columnForm.Tables);
+                updateSQLCreateTables();
             }
             columnForm.Dispose();
         }
 
-        private void tsiPreviewSQL_Click(object sender, EventArgs e)
+        private void updateSQLCreateTables()
         {
-            String dataBaseName = "testeODDB";
-            StringBuilder sql = new StringBuilder("CREATE DATABASE " + dataBaseName+";\n");
-            sql.Append("USE " + dataBaseName + ";\n");
-
-            prepareTablesSQL();
-
-            foreach(Table t in tables){
-                sql.Append(t.SQLcreate);
-            }
-
-            SQLPreviewForm sqlPreviewForm = new SQLPreviewForm(sql.ToString());
-            sqlPreviewForm.ShowDialog();
-            sqlPreviewForm.Dispose();
+            SQLGenerator.prepareTablesSQL(ref tables);
         }
 
-        private void prepareTablesSQL()
+        private void tsiTablesCreate_Click(object sender, EventArgs e)
         {
-            foreach (Table t in tables)
+            CreateTablesForm createTablesForm = new CreateTablesForm(tables,startForm.Db);
+            createTablesForm.ShowDialog();
+            createTablesForm.Dispose();
+        }
+
+        private void tsiTablesEdit_Click(object sender, EventArgs e)
+        {
+            ChangeTablesForm changeTablesForm = new ChangeTablesForm(tables, startForm.Db);
+            DialogResult result = changeTablesForm.ShowDialog();
+            if (!"".Equals(result.ToString()))
             {
-                StringBuilder sql =  new StringBuilder("CREATE TABLE " + t.TableName + " (\n");
-                for (int i = 0; i < t.Columns.Count; i++)
-                {
-                    sql.Append(t.Columns.ElementAt(i).ColumnName + " " + t.Columns.ElementAt(i).sqlType);
-                    if (i < t.Columns.Count - 1)
-                        sql.Append(",\n");
-                    else
-                        sql.Append("\n");
-                }
-                sql.Append(");\n");
-                t.SQLcreate = sql.ToString();
+                createTablesTabsView(changeTablesForm.Tables);
+                updateSQLCreateTables();
             }
-        }
-
-        private void tsiCreateDatabase_Click(object sender, EventArgs e)
-        {
-            DataBasesForm dataBasesForm = new DataBasesForm(startForm.Db);
-            dataBasesForm.ShowDialog();
-            dataBasesForm.Dispose();
+            changeTablesForm.Dispose();
         }
     }
 }

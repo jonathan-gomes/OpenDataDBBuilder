@@ -210,4 +210,34 @@
   <data name="ChangeColumnForm" xml:space="preserve">
     <value>Edit Columns</value>
   </data>
+  <data name="lblColumnText" xml:space="preserve">
+    <value>Column</value>
+  </data>
+  <data name="lblTypeText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="CreateTablesForm" xml:space="preserve">
+    <value>Create Tables</value>
+  </data>
+  <data name="lblDataBases" xml:space="preserve">
+    <value>Databases:</value>
+  </data>
+  <data name="lblTables" xml:space="preserve">
+    <value>Tables:</value>
+  </data>
+  <data name="AddDBForm" xml:space="preserve">
+    <value>New database</value>
+  </data>
+  <data name="noDBMsg" xml:space="preserve">
+    <value>No Database selected!</value>
+  </data>
+  <data name="noSQLMsg" xml:space="preserve">
+    <value>No SQL to create tables!</value>
+  </data>
+  <data name="table" xml:space="preserve">
+    <value>Table </value>
+  </data>
+  <data name="errorMsgFK" xml:space="preserve">
+    <value>Complete FK for {0} column</value>
+  </data>
 </root>

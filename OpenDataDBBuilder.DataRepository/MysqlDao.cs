@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Configuration;
@@ -21,22 +22,6 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
             return mySQLInstancy;
         }
 
-        public Boolean isConnectionAvailable()
-        {
-            try
-            {//Database=test;
-                MySqlConnection conn = new MySqlConnection("Server=localhost;Port=3306;Uid=root;Pwd=root;");
-                conn.Open();
-                conn.Close();
-                return true;
-            }
-            catch(Exception ex)
-            {
-                Console.Out.Write(ex.Message);
-            }
-            return false;
-        }
-
         public Boolean isConnectionAvailable(String conn)
         {
             try
@@ -53,31 +38,13 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
             return false;
         }
 
-        public void addDatabase(String dataBase)
-        {
-            try
-            {
-                String sql = "CREATE DATABASE " + dataBase + ";";
-                MySqlConnection connection = new MySqlConnection(Conn);
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.ExecuteReader();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.Out.Write(ex.Message);
-            }
-        }
 
 
-        public List<String> selectDataBases()
+        public List<String> selectDataBases(String sql)
         {
             List<String> databases = new List<String>();
             try
             {
-               
-                String sql = "SHOW DATABASES;";
                 MySqlConnection connection = new MySqlConnection(Conn);
                 MySqlDataReader rdr = null;
                 connection.Open();
@@ -89,8 +56,6 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
                 {
                     databases.Add(rdr.GetString(0));
                 }
-
-
                 connection.Close();
             }
             catch (Exception ex)
@@ -98,6 +63,76 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
                 Console.Out.Write(ex.Message);
             }
             return databases;
+        }
+
+        public String executeSQL(String sql)
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(Conn);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return "";
+        }
+
+        public List<String> getTablesFromDataBase(String sql)
+        {
+           return getFirstCollumnListFromSQLReturn(sql);
+        }
+        public List<String> getFieldListFromDBTable(String sql)
+        {
+            return getFirstCollumnListFromSQLReturn(sql);
+        }
+        public DataTable getTableDescription(String sql)
+        {
+            DataTable tableDescription = new DataTable();
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(Conn);
+                connection.Open();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
+                adapter.Fill(tableDescription);
+                
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.Out.Write(ex.Message);
+            }
+            return tableDescription;
+        }
+
+        List<String> getFirstCollumnListFromSQLReturn(String sql)
+        {
+            List<String> lines = new List<String>();
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(Conn);
+                MySqlDataReader rdr = null;
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    lines.Add(rdr.GetString(0));
+                }
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.Out.Write(ex.Message);
+            }
+            return lines;
         }
     }
 }

@@ -215,7 +215,7 @@ namespace OpenDataDBBuilder.Business.File.XML.Util
                 {
                     String parentName = element.Parent.Name.ToString();
                     String columnParentIDName = parentName + "ID";
-                    String reference = parentName + "." + columnParentIDName;
+                    KeyValue reference = new KeyValue(parentName, columnParentIDName);
                     Column columnParentID = new Column(columnParentIDName, false, true, true,reference);
                     tables[index].Columns.Add(columnParentID);
                 }

@@ -61,6 +61,15 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New database.
+        /// </summary>
+        internal static string AddDBForm {
+            get {
+                return ResourceManager.GetString("AddDBForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         internal static string btnOKDB {
@@ -106,6 +115,15 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Tables.
+        /// </summary>
+        internal static string CreateTablesForm {
+            get {
+                return ResourceManager.GetString("CreateTablesForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit {0} Connection.
         /// </summary>
         internal static string EditDBConnectionForm {
@@ -124,11 +142,38 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Complete FK for {0} column.
+        /// </summary>
+        internal static string errorMsgFK {
+            get {
+                return ResourceManager.GetString("errorMsgFK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Info: .
         /// </summary>
         internal static string info {
             get {
                 return ResourceManager.GetString("info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Column.
+        /// </summary>
+        internal static string lblColumnText {
+            get {
+                return ResourceManager.GetString("lblColumnText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Databases:.
+        /// </summary>
+        internal static string lblDataBases {
+            get {
+                return ResourceManager.GetString("lblDataBases", resourceCulture);
             }
         }
         
@@ -178,11 +223,47 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tables:.
+        /// </summary>
+        internal static string lblTables {
+            get {
+                return ResourceManager.GetString("lblTables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        internal static string lblTypeText {
+            get {
+                return ResourceManager.GetString("lblTypeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User:.
         /// </summary>
         internal static string lblUser {
             get {
                 return ResourceManager.GetString("lblUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Database selected!.
+        /// </summary>
+        internal static string noDBMsg {
+            get {
+                return ResourceManager.GetString("noDBMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No SQL to create tables!.
+        /// </summary>
+        internal static string noSQLMsg {
+            get {
+                return ResourceManager.GetString("noSQLMsg", resourceCulture);
             }
         }
         
@@ -201,6 +282,15 @@ namespace OpenDataDBBuilder.Properties {
         internal static string SQLPreviewForm {
             get {
                 return ResourceManager.GetString("SQLPreviewForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Table .
+        /// </summary>
+        internal static string table {
+            get {
+                return ResourceManager.GetString("table", resourceCulture);
             }
         }
         

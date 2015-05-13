@@ -1,6 +1,6 @@
 ﻿namespace OpenDataDBBuilder.UI
 {
-    partial class SQLPreviewForm
+    partial class TableDescriptionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rtbSQL = new System.Windows.Forms.RichTextBox();
+            this.dgvTableDescription = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTableDescription)).BeginInit();
             this.SuspendLayout();
             // 
-            // rtbSQL
+            // dgvTableDescription
             // 
-            this.rtbSQL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbSQL.Location = new System.Drawing.Point(0, 0);
-            this.rtbSQL.Name = "rtbSQL";
-            this.rtbSQL.ReadOnly = true;
-            this.rtbSQL.Size = new System.Drawing.Size(550, 433);
-            this.rtbSQL.TabIndex = 0;
-            this.rtbSQL.Text = "";
+            this.dgvTableDescription.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTableDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTableDescription.Location = new System.Drawing.Point(0, 0);
+            this.dgvTableDescription.Name = "dgvTableDescription";
+            this.dgvTableDescription.ReadOnly = true;
+            this.dgvTableDescription.Size = new System.Drawing.Size(535, 407);
+            this.dgvTableDescription.TabIndex = 0;
             // 
-            // SQLPreviewForm
+            // TableDescriptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 433);
-            this.Controls.Add(this.rtbSQL);
-            this.Name = "SQLPreviewForm";
-            this.Text = "SQLPreviewForm";
+            this.ClientSize = new System.Drawing.Size(535, 407);
+            this.Controls.Add(this.dgvTableDescription);
+            this.Name = "TableDescriptionForm";
+            this.Text = "TableDescriptionForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTableDescription)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox rtbSQL;
+        private System.Windows.Forms.DataGridView dgvTableDescription;
     }
 }

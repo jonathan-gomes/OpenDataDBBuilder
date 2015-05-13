@@ -40,11 +40,9 @@ namespace OpenDataDBBuilder.UI
             this.tsiEditColumns = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiTablesEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiCreate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiCreateDatabase = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiPreviewSQL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiTablesCreate = new System.Windows.Forms.ToolStripMenuItem();
-            this.dtcTables = new OpenDataDBBuilder.UI.Components.DraggableTabControl();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.dtcTables = new OpenDataDBBuilder.UI.Components.DraggableTabControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,7 +88,7 @@ namespace OpenDataDBBuilder.UI
             this.tsiLangEnglish,
             this.tsiLangPortuguese});
             this.tsiLanguage.Name = "tsiLanguage";
-            this.tsiLanguage.Size = new System.Drawing.Size(126, 22);
+            this.tsiLanguage.Size = new System.Drawing.Size(152, 22);
             this.tsiLanguage.Text = "Language";
             // 
             // tsiLangEnglish
@@ -121,45 +119,35 @@ namespace OpenDataDBBuilder.UI
             // tsiEditColumns
             // 
             this.tsiEditColumns.Name = "tsiEditColumns";
-            this.tsiEditColumns.Size = new System.Drawing.Size(145, 22);
+            this.tsiEditColumns.Size = new System.Drawing.Size(152, 22);
             this.tsiEditColumns.Text = "Edit Columns";
             this.tsiEditColumns.Click += new System.EventHandler(this.tsiEditColumns_Click);
             // 
             // tsiTablesEdit
             // 
             this.tsiTablesEdit.Name = "tsiTablesEdit";
-            this.tsiTablesEdit.Size = new System.Drawing.Size(145, 22);
+            this.tsiTablesEdit.Size = new System.Drawing.Size(152, 22);
             this.tsiTablesEdit.Text = "Edit Tables";
+            this.tsiTablesEdit.Click += new System.EventHandler(this.tsiTablesEdit_Click);
             // 
             // tsiCreate
             // 
             this.tsiCreate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiCreateDatabase,
-            this.tsiPreviewSQL,
             this.tsiTablesCreate});
             this.tsiCreate.Name = "tsiCreate";
             this.tsiCreate.Size = new System.Drawing.Size(53, 20);
             this.tsiCreate.Text = "Create";
-            // 
-            // tsiCreateDatabase
-            // 
-            this.tsiCreateDatabase.Name = "tsiCreateDatabase";
-            this.tsiCreateDatabase.Size = new System.Drawing.Size(152, 22);
-            this.tsiCreateDatabase.Text = "Database";
-            this.tsiCreateDatabase.Click += new System.EventHandler(this.tsiCreateDatabase_Click);
-            // 
-            // tsiPreviewSQL
-            // 
-            this.tsiPreviewSQL.Name = "tsiPreviewSQL";
-            this.tsiPreviewSQL.Size = new System.Drawing.Size(152, 22);
-            this.tsiPreviewSQL.Text = "Preview SQL";
-            this.tsiPreviewSQL.Click += new System.EventHandler(this.tsiPreviewSQL_Click);
             // 
             // tsiTablesCreate
             // 
             this.tsiTablesCreate.Name = "tsiTablesCreate";
             this.tsiTablesCreate.Size = new System.Drawing.Size(152, 22);
             this.tsiTablesCreate.Text = "Tables";
+            this.tsiTablesCreate.Click += new System.EventHandler(this.tsiTablesCreate_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // dtcTables
             // 
@@ -170,10 +158,6 @@ namespace OpenDataDBBuilder.UI
             this.dtcTables.SelectedIndex = 0;
             this.dtcTables.Size = new System.Drawing.Size(815, 480);
             this.dtcTables.TabIndex = 2;
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // TablesForm
             // 
@@ -210,8 +194,6 @@ namespace OpenDataDBBuilder.UI
         private System.Windows.Forms.ToolStripMenuItem tsiEditColumns;
         private System.Windows.Forms.ToolStripMenuItem tsiTablesEdit;
         private System.Windows.Forms.ToolStripMenuItem tsiCreate;
-        private System.Windows.Forms.ToolStripMenuItem tsiCreateDatabase;
-        private System.Windows.Forms.ToolStripMenuItem tsiPreviewSQL;
         private System.Windows.Forms.ToolStripMenuItem tsiTablesCreate;
 
     }

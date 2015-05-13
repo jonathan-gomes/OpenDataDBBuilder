@@ -75,17 +75,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDBForm.Designer.cs">
+      <DependentUpon>AddDBForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangeColumnForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChangeColumnForm.Designer.cs">
       <DependentUpon>ChangeColumnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataBasesForm.cs">
+    <Compile Include="ChangeTablesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataBasesForm.Designer.cs">
-      <DependentUpon>DataBasesForm.cs</DependentUpon>
+    <Compile Include="ChangeTablesForm.Designer.cs">
+      <DependentUpon>ChangeTablesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTablesForm.Designer.cs">
+      <DependentUpon>CreateTablesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditDBConnectionForm.cs">
       <SubType>Form</SubType>
@@ -124,17 +136,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources_en-US.resx</DependentUpon>
     </Compile>
-    <Compile Include="SQLPreviewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SQLPreviewForm.Designer.cs">
-      <DependentUpon>SQLPreviewForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="StartScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StartScreenForm.Designer.cs">
       <DependentUpon>StartScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableDescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableDescriptionForm.Designer.cs">
+      <DependentUpon>TableDescriptionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TablesForm.cs">
       <SubType>Form</SubType>
@@ -142,11 +154,17 @@
     <Compile Include="TablesForm.Designer.cs">
       <DependentUpon>TablesForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDBForm.resx">
+      <DependentUpon>AddDBForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeColumnForm.resx">
       <DependentUpon>ChangeColumnForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataBasesForm.resx">
-      <DependentUpon>DataBasesForm.cs</DependentUpon>
+    <EmbeddedResource Include="ChangeTablesForm.resx">
+      <DependentUpon>ChangeTablesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateTablesForm.resx">
+      <DependentUpon>CreateTablesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDBConnectionForm.resx">
       <DependentUpon>EditDBConnectionForm.cs</DependentUpon>
@@ -173,14 +191,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources_en-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SQLPreviewForm.resx">
-      <DependentUpon>SQLPreviewForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StartScreenForm.pt-BR.resx">
       <DependentUpon>StartScreenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartScreenForm.resx">
       <DependentUpon>StartScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableDescriptionForm.resx">
+      <DependentUpon>TableDescriptionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TablesForm.resx">
       <DependentUpon>TablesForm.cs</DependentUpon>
@@ -281,6 +299,9 @@
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

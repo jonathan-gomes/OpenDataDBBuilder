@@ -22,6 +22,7 @@ namespace OpenDataDBBuilder.UI
         public InfoErrorDialogForm(Boolean isError, String msg)
         {
             InitializeComponent();
+            getDefaultValues();
             getLocalizedLabelsMessages();
             if (isError)
             {
@@ -37,12 +38,21 @@ namespace OpenDataDBBuilder.UI
             }
         }
 
+        private void getDefaultValues()
+        {
+            this.Icon = Properties.Resources.icooddb;
+        }
         private void getLocalizedLabelsMessages()
         {
             CultureInfo language = Thread.CurrentThread.CurrentUICulture;
             Localization.Localization loc = new Localization.Localization();
             error = loc.getLocalizedResource(language, error);
             info = loc.getLocalizedResource(language, info);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
