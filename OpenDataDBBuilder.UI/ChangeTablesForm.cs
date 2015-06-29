@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenDataDBBuilder.Business.DB;
 using OpenDataDBBuilder.Business.DB.VO;
-//using OpenDataDBBuilder.Business.VO;
+using OpenDataDBBuilder.Business.VO;
 
 using System.Globalization;
 using System.Threading;
@@ -19,16 +19,15 @@ namespace OpenDataDBBuilder.UI
 {
     public partial class ChangeTablesForm : Form
     {
-        String db = "";
         public List<Table> Tables { get; set; }
+        DBConfig dbconfig;
         DatabaseHelper dbHelper;
-        String lblTableText = "";
 
-        public ChangeTablesForm(List<Table> tables, String db)
+        public ChangeTablesForm(List<Table> tables, DBConfig dbconfig)
         {
             this.Tables = tables;
-            this.db = db;
-            this.dbHelper = new DatabaseHelper(db);
+            this.dbconfig = dbconfig;
+            this.dbHelper = new DatabaseHelper(dbconfig);
             InitializeComponent();
             getLocalizedLabelsMessages();
             getDefaultValues();
@@ -43,15 +42,16 @@ namespace OpenDataDBBuilder.UI
         }
         private void getDefaultValues()
         {
+            this.Icon = Properties.Resources.icooddb;
             int gpbxX = 12;
             int gpbxY = 12;
             this.Controls.Clear();
             foreach (Table t in Tables)
             {
                 GroupBox gpx = new GroupBox();
+                gpx.Name = "gpbx";
                 gpx.Location = new Point(gpbxX, gpbxY);
                 gpx.Size = new System.Drawing.Size(355, 61);
-                gpx.Name = t.TableName;
 
                 TextBox texb = new TextBox();
                 texb.Name = t.TableName;
@@ -64,5 +64,23 @@ namespace OpenDataDBBuilder.UI
                 gpbxY += 60;
             }
         }
+
+        private void ChangeTablesForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            foreach (Table t in Tables)
+            {
+                foreach (Control ctrlGpbx in this.Controls.Find("gpbx", true))
+                {
+                    if (ctrlGpbx.Controls.Find(t.TableName, true).Count() > 0)
+                    {
+                        String tableName = ((TextBox)ctrlGpbx.Controls.Find(t.TableName, true)[0]).Text;
+                        t.TableName = tableName == null || tableName.Equals("") ? t.TableName : tableName;
+                        break;
+                    }
+                }
+            }
+        }
+
     }
 }

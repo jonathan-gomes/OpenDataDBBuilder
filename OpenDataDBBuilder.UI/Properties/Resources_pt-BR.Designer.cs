@@ -70,6 +70,51 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Voltar.
+        /// </summary>
+        internal static string btnBackStep {
+            get {
+                return ResourceManager.GetString("btnBackStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancelar.
+        /// </summary>
+        internal static string btnCancel {
+            get {
+                return ResourceManager.GetString("btnCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finalizar.
+        /// </summary>
+        internal static string btnFinish {
+            get {
+                return ResourceManager.GetString("btnFinish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avançar.
+        /// </summary>
+        internal static string btnNextStep {
+            get {
+                return ResourceManager.GetString("btnNextStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string btnOK {
+            get {
+                return ResourceManager.GetString("btnOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editar.
         /// </summary>
         internal static string btnOKDB {
@@ -79,11 +124,20 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Escolher arquivo.
+        ///   Looks up a localized string similar to Abrir.
         /// </summary>
         internal static string btnOpenFile {
             get {
                 return ResourceManager.GetString("btnOpenFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserir Valores.
+        /// </summary>
+        internal static string btnPreviewInsertValues {
+            get {
+                return ResourceManager.GetString("btnPreviewInsertValues", resourceCulture);
             }
         }
         
@@ -97,11 +151,47 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Configurar conexão.
+        /// </summary>
+        internal static string btnSetDbConnection {
+            get {
+                return ResourceManager.GetString("btnSetDbConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Testar.
         /// </summary>
         internal static string btnTest {
             get {
                 return ResourceManager.GetString("btnTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valor default:.
+        /// </summary>
+        internal static string cbxDeafultValue {
+            get {
+                return ResourceManager.GetString("cbxDeafultValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pular.
+        /// </summary>
+        internal static string cbxSkipText {
+            get {
+                return ResourceManager.GetString("cbxSkipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parar se houver erro.
+        /// </summary>
+        internal static string cbxStopOnError {
+            get {
+                return ResourceManager.GetString("cbxStopOnError", resourceCulture);
             }
         }
         
@@ -115,11 +205,11 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Criação das Tabelas.
+        ///   Looks up a localized string similar to Edita nomes das tabelas.
         /// </summary>
-        internal static string CreateTablesForm {
+        internal static string ChangeTablesForm {
             get {
-                return ResourceManager.GetString("CreateTablesForm", resourceCulture);
+                return ResourceManager.GetString("ChangeTablesForm", resourceCulture);
             }
         }
         
@@ -151,11 +241,47 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Executar Query.
+        /// </summary>
+        internal static string ExecuteSQLForm {
+            get {
+                return ResourceManager.GetString("ExecuteSQLForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Info: .
         /// </summary>
         internal static string info {
             get {
                 return ResourceManager.GetString("info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserir valores?.
+        /// </summary>
+        internal static string initialMessageInserting {
+            get {
+                return ResourceManager.GetString("initialMessageInserting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserir dados.
+        /// </summary>
+        internal static string InsertDataForm {
+            get {
+                return ResourceManager.GetString("InsertDataForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coluna.
+        /// </summary>
+        internal static string lblCollumnName {
+            get {
+                return ResourceManager.GetString("lblCollumnName", resourceCulture);
             }
         }
         
@@ -169,11 +295,38 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Banco de dados:.
+        /// </summary>
+        internal static string lblDatabase {
+            get {
+                return ResourceManager.GetString("lblDatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bancos:.
         /// </summary>
         internal static string lblDataBases {
             get {
                 return ResourceManager.GetString("lblDataBases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arquivo de dados:.
+        /// </summary>
+        internal static string lblDataFile {
+            get {
+                return ResourceManager.GetString("lblDataFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to * arquivo para extração dos dados.
+        /// </summary>
+        internal static string lblDataFileHelp {
+            get {
+                return ResourceManager.GetString("lblDataFileHelp", resourceCulture);
             }
         }
         
@@ -192,6 +345,33 @@ namespace OpenDataDBBuilder.Properties {
         internal static string lblLanguage {
             get {
                 return ResourceManager.GetString("lblLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Limite:.
+        /// </summary>
+        internal static string lblLimit {
+            get {
+                return ResourceManager.GetString("lblLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # de conexões.
+        /// </summary>
+        internal static string lblNofConn {
+            get {
+                return ResourceManager.GetString("lblNofConn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ação para erros.
+        /// </summary>
+        internal static string lblOnErrorAction {
+            get {
+                return ResourceManager.GetString("lblOnErrorAction", resourceCulture);
             }
         }
         
@@ -223,11 +403,65 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tabela ou coluna a ser criada.
+        /// </summary>
+        internal static string lblTableColumn {
+            get {
+                return ResourceManager.GetString("lblTableColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tabelas:.
         /// </summary>
         internal static string lblTables {
             get {
                 return ResourceManager.GetString("lblTables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Template:.
+        /// </summary>
+        internal static string lblTemplateFile {
+            get {
+                return ResourceManager.GetString("lblTemplateFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to * pula outras configurações.
+        /// </summary>
+        internal static string lblTemplateHelp {
+            get {
+                return ResourceManager.GetString("lblTemplateHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Escolha os arquivos.
+        /// </summary>
+        internal static string lblTextStepOne {
+            get {
+                return ResourceManager.GetString("lblTextStepOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defina a conexão.
+        /// </summary>
+        internal static string lblTextStepThree {
+            get {
+                return ResourceManager.GetString("lblTextStepThree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Escolha o banco.
+        /// </summary>
+        internal static string lblTextStepTwo {
+            get {
+                return ResourceManager.GetString("lblTextStepTwo", resourceCulture);
             }
         }
         
@@ -241,11 +475,74 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Banco selecionado.
+        /// </summary>
+        internal static string lblUsedDB {
+            get {
+                return ResourceManager.GetString("lblUsedDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Usuário:.
         /// </summary>
         internal static string lblUser {
             get {
                 return ResourceManager.GetString("lblUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arquivo de dados inválido.
+        /// </summary>
+        internal static string msgErrorInvalidDataFile {
+            get {
+                return ResourceManager.GetString("msgErrorInvalidDataFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nenhum arquivo de dados selecionado!.
+        /// </summary>
+        internal static string msgErrorNoDataFile {
+            get {
+                return ResourceManager.GetString("msgErrorNoDataFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arquivo não suportado.
+        /// </summary>
+        internal static string msgInvalidExtension {
+            get {
+                return ResourceManager.GetString("msgInvalidExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O template tem configurações de conexão inválidas! Favor configurar sua conexão.
+        /// </summary>
+        internal static string msgInvalidTemplateConnection {
+            get {
+                return ResourceManager.GetString("msgInvalidTemplateConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O arquivo de template é inválido para o arquivo de dados selecionado!.
+        /// </summary>
+        internal static string msgInvalidTemplateDataFile {
+            get {
+                return ResourceManager.GetString("msgInvalidTemplateDataFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comando SQL executado com sucesso!.
+        /// </summary>
+        internal static string msgSuccessExecuteSQL {
+            get {
+                return ResourceManager.GetString("msgSuccessExecuteSQL", resourceCulture);
             }
         }
         
@@ -277,6 +574,33 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inserir valor default:.
+        /// </summary>
+        internal static string rbtnDefaultValueText {
+            get {
+                return ResourceManager.GetString("rbtnDefaultValueText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pular registro.
+        /// </summary>
+        internal static string rbtnSkipLineText {
+            get {
+                return ResourceManager.GetString("rbtnSkipLineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erro ao inserir linhas.
+        /// </summary>
+        internal static string retInsertRowsError {
+            get {
+                return ResourceManager.GetString("retInsertRowsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vizualização de SQL.
         /// </summary>
         internal static string SQLPreviewForm {
@@ -304,7 +628,7 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Falha na conexão!.
+        ///   Looks up a localized string similar to Falha na{0}conexão!.
         /// </summary>
         internal static string testFail {
             get {
@@ -313,11 +637,20 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Conexão bem-sucedida!.
+        ///   Looks up a localized string similar to Conexão{0}bem-sucedida!.
         /// </summary>
         internal static string testSuccess {
             get {
                 return ResourceManager.GetString("testSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conexão.
+        /// </summary>
+        internal static string tsiConnection {
+            get {
+                return ResourceManager.GetString("tsiConnection", resourceCulture);
             }
         }
         
@@ -340,7 +673,16 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Editar Colunas.
+        ///   Looks up a localized string similar to Editar.
+        /// </summary>
+        internal static string tsiEdit {
+            get {
+                return ResourceManager.GetString("tsiEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colunas.
         /// </summary>
         internal static string tsiEditColumns {
             get {
@@ -354,6 +696,15 @@ namespace OpenDataDBBuilder.Properties {
         internal static string tsiFile {
             get {
                 return ResourceManager.GetString("tsiFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserir.
+        /// </summary>
+        internal static string tsiInsert {
+            get {
+                return ResourceManager.GetString("tsiInsert", resourceCulture);
             }
         }
         
@@ -394,11 +745,11 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tabelas.
+        ///   Looks up a localized string similar to Salvar Template.
         /// </summary>
-        internal static string tsiTables {
+        internal static string tsiSaveTemplate {
             get {
-                return ResourceManager.GetString("tsiTables", resourceCulture);
+                return ResourceManager.GetString("tsiSaveTemplate", resourceCulture);
             }
         }
         
@@ -412,7 +763,7 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Editar Tabelas.
+        ///   Looks up a localized string similar to Tabelas.
         /// </summary>
         internal static string tsiTablesEdit {
             get {

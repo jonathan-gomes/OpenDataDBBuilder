@@ -13,7 +13,12 @@ namespace OpenDataDBBuilder.DataRepository
         List<String> selectDataBases(String sql);
         String executeSQL(String sql);
         List<String> getTablesFromDataBase(String sql);
-        DataTable getTableDescription(String sql);
+        DataTable getDataTable(String sql);
         List<String> getFieldListFromDBTable(String sql);
+        void openDataBaseConn();
+        void closeDataBaseConn();
+        void executeSQLConnectionKeepAlive(String sql, object conn);
+        object getOpenConnection();
+        void closeConnection(object conn);
     }
 }

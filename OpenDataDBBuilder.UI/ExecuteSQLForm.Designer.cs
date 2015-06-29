@@ -1,6 +1,6 @@
 ﻿namespace OpenDataDBBuilder.UI
 {
-    partial class CreateTablesForm
+    partial class ExecuteSQLForm
     {
         /// <summary>
         /// Required designer variable.
@@ -135,15 +135,15 @@
             this.cmbDBs.TabIndex = 2;
             this.cmbDBs.SelectedValueChanged += new System.EventHandler(this.cmbDBs_SelectedValueChanged);
             // 
-            // CreateTablesForm
+            // ExecuteSQLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 448);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "CreateTablesForm";
+            this.Name = "ExecuteSQLForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateTablesForm";
+            this.Text = "ExecuteSQLForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

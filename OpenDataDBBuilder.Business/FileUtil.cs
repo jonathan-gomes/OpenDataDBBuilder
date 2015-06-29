@@ -13,26 +13,13 @@ namespace OpenDataDBBuilder.Business.File.Util
     {
         public FileUtil(){}
 
-        public static void createFile(String filePath, String content)
+        public static void createFile(String filePath, String content, Boolean overwrite)
         {
-            if (!System.IO.File.Exists(filePath))
+            if (!System.IO.File.Exists(filePath) || (overwrite && System.IO.File.Exists(filePath)))
             {
-                using (FileStream fs = System.IO.File.Create(filePath))
-                {
-                    Byte[] info = new UTF8Encoding(true).GetBytes(content);
-                    fs.Write(info, 0, info.Length);
-                    fs.Close();
-                }
-            }
+                if (overwrite && System.IO.File.Exists(filePath))
+                    System.IO.File.Delete(filePath);
 
-        }
-
-
-        public static void overWriteFile(String filePath, String content)
-        {
-            if (System.IO.File.Exists(filePath))
-            {
-                System.IO.File.Delete(filePath);
                 using (FileStream fs = System.IO.File.Create(filePath))
                 {
                     Byte[] info = new UTF8Encoding(true).GetBytes(content);
@@ -150,7 +137,6 @@ namespace OpenDataDBBuilder.Business.File.Util
             Table table = new Table();
             table.Columns = new List<Column>();
             table.Rows = new List<Row>();
-
             try
             {
                 StreamReader reader = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite), Encoding.Default);
@@ -171,7 +157,7 @@ namespace OpenDataDBBuilder.Business.File.Util
                     int index = 1;
                     foreach (String s in fields)
                     {
-                        row.Values.Add(new KeyValue("column"+index, s.Replace("\"", "")));
+                        row.Values.Add(new KeyValue("column" + index, cleanValue(s).Replace("\"", "")));
                         index++;
                     }
                     table.Rows.Add(row);
@@ -183,7 +169,15 @@ namespace OpenDataDBBuilder.Business.File.Util
                 Console.Out.Write(e);
             }
             table.TableName = "Table1";
+            table.OriginalTableName = "Table1";
             return table;
         }
+
+        public static String cleanValue(String value)
+        {
+            value = value.Replace("'", "");
+            return value;
+        }
+
     }
 }

@@ -67,7 +67,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -81,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Column.cs" />
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="DBConfig.cs" />
     <Compile Include="DBInitializer.cs" />
     <Compile Include="FileUtil.cs" />
     <Compile Include="KeyValue.cs" />
@@ -90,17 +94,22 @@
     <Compile Include="SQLGenerator.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="ClassUtil.cs" />
+    <Compile Include="TablesLayout.cs" />
+    <Compile Include="TableList.cs" />
+    <Compile Include="Template.cs" />
+    <Compile Include="TemplateFileUtil.cs" />
     <Compile Include="XMLFileUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="OpenDataDBBuilder.Business_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 e x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

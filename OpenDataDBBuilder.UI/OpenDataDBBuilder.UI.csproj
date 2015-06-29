@@ -61,6 +61,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icooddb_gZx_2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -93,11 +96,23 @@
     <Compile Include="ChangeTablesForm.Designer.cs">
       <DependentUpon>ChangeTablesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateTablesForm.cs">
+    <Compile Include="DialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateTablesForm.Designer.cs">
-      <DependentUpon>CreateTablesForm.cs</DependentUpon>
+    <Compile Include="DialogForm.Designer.cs">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogInsertingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogInsertingForm.Designer.cs">
+      <DependentUpon>DialogInsertingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteSQLForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExecuteSQLForm.Designer.cs">
+      <DependentUpon>ExecuteSQLForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditDBConnectionForm.cs">
       <SubType>Form</SubType>
@@ -110,6 +125,12 @@
     </Compile>
     <Compile Include="InfoErrorDialogForm.Designer.cs">
       <DependentUpon>InfoErrorDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertDataForm.Designer.cs">
+      <DependentUpon>InsertDataForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Localization.cs" />
     <Compile Include="MainForm.cs">
@@ -163,14 +184,23 @@
     <EmbeddedResource Include="ChangeTablesForm.resx">
       <DependentUpon>ChangeTablesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateTablesForm.resx">
-      <DependentUpon>CreateTablesForm.cs</DependentUpon>
+    <EmbeddedResource Include="DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogInsertingForm.resx">
+      <DependentUpon>DialogInsertingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExecuteSQLForm.resx">
+      <DependentUpon>ExecuteSQLForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDBConnectionForm.resx">
       <DependentUpon>EditDBConnectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoErrorDialogForm.resx">
       <DependentUpon>InfoErrorDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertDataForm.resx">
+      <DependentUpon>InsertDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -189,7 +219,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources_en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources_en-US.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources_en-US1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StartScreenForm.pt-BR.resx">
       <DependentUpon>StartScreenForm.cs</DependentUpon>
@@ -249,7 +279,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 e x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -302,6 +332,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\run.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selectedDB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tableColumnCreate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5TRX89egc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

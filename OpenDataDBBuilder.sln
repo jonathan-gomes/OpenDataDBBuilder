@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDataDBBuilder.Business"
 		{963337D4-2F83-41AB-9E9C-63309DB7B89E} = {963337D4-2F83-41AB-9E9C-63309DB7B89E}
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OpenDataDBBuilder.Installer", "OpenDataDBBuilder.Installer\OpenDataDBBuilder.Installer.vdproj", "{E8A0F909-1C51-4762-A20E-0115F9A4397B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDataDBBuilder.UI.Components", "OpenDataDBBuilder.UI.Components\OpenDataDBBuilder.UI.Components.csproj", "{9768FF46-1509-4B32-9B23-5DB183D8A348}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDataDBBuilder.DataRepository", "OpenDataDBBuilder.DataRepository\OpenDataDBBuilder.DataRepository.csproj", "{963337D4-2F83-41AB-9E9C-63309DB7B89E}"
@@ -33,8 +31,6 @@ Global
 		{79B9F9AE-DAA5-4218-8247-B72741BF258D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79B9F9AE-DAA5-4218-8247-B72741BF258D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79B9F9AE-DAA5-4218-8247-B72741BF258D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8A0F909-1C51-4762-A20E-0115F9A4397B}.Debug|Any CPU.ActiveCfg = Debug
-		{E8A0F909-1C51-4762-A20E-0115F9A4397B}.Release|Any CPU.ActiveCfg = Release
 		{9768FF46-1509-4B32-9B23-5DB183D8A348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9768FF46-1509-4B32-9B23-5DB183D8A348}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9768FF46-1509-4B32-9B23-5DB183D8A348}.Release|Any CPU.ActiveCfg = Release|Any CPU

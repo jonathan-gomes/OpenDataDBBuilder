@@ -7,120 +7,137 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OpenDataDBBuilder.Business.DB;
+using OpenDataDBBuilder.Business.DB.VO;
+using OpenDataDBBuilder.Business.VO;
 
 using System.Globalization;
 using System.Threading;
 using OpenDataDBBuilder.UI.Localization;
-using OpenDataDBBuilder.Business.DB;
-using OpenDataDBBuilder.Business.File.Util;
-
 
 namespace OpenDataDBBuilder.UI
 {
     public partial class EditDBConnectionForm : Form
     {
-        String db = "";
-        String testFail = "";
+        public DBConfig dbconfig { get; set; }
         String testSuccess = "";
-        String DBConfigPath = "";
-        public String dbConnection { get; set; }
-
-        public EditDBConnectionForm(String db)
+        String testFail = "";
+        DatabaseHelper dbHelper;
+        public EditDBConnectionForm(DBConfig dbconfig)
         {
-            this.db = db;
-            this.dbConnection = "";
+            this.dbconfig = dbconfig;
             InitializeComponent();
-            getDefaultValues();
             getLocalizedLabelsMessages();
-            this.Icon = Properties.Resources.icooddb;
+            getDefaultValues();
         }
 
         private void getLocalizedLabelsMessages()
         {
             CultureInfo language = Thread.CurrentThread.CurrentUICulture;
             Localization.Localization loc = new Localization.Localization();
-
-            this.Text = loc.getLocalizedResource(language, this.Name).Replace("{0}",db);
+            this.Text = loc.getLocalizedResource(language, this.Name).Replace("{0}", dbconfig.Db);
             this.lblPassword.Text = loc.getLocalizedResource(language, this.lblPassword.Name);
             this.lblPort.Text = loc.getLocalizedResource(language, this.lblPort.Name);
             this.lblServer.Text = loc.getLocalizedResource(language, this.lblServer.Name);
             this.lblUser.Text = loc.getLocalizedResource(language, this.lblUser.Name);
             this.btnSave.Text = loc.getLocalizedResource(language, this.btnSave.Name);
             this.btnTest.Text = loc.getLocalizedResource(language, this.btnTest.Name);
-            testSuccess = loc.getLocalizedResource(language, "testSuccess");
-            testFail = loc.getLocalizedResource(language, "testFail");
+            testSuccess = loc.getLocalizedResource(language, "testSuccess").Replace("{0}",Environment.NewLine);
+            testFail = loc.getLocalizedResource(language, "testFail").Replace("{0}", Environment.NewLine);
         }
 
         private void getDefaultValues()
         {
-            this.lblTestResult.Text = "";
-            string appPath = Application.StartupPath;
-            DBConfigPath = appPath + "/DBConfig" + db + ".config";
-            createDBConfigFile();
-            readDBConfigFile();
+            this.Icon = Properties.Resources.icooddb;
+            if (dbconfig != null && dbconfig.Db != null)
+            {
+                dbHelper = new DatabaseHelper(dbconfig);
+                this.txbServer.Text = dbconfig.Server;
+                this.txbPort.Text = dbconfig.Port;
+                this.txbUser.Text = dbconfig.User;
+                this.txbPassword.Text = dbconfig.Password;
+
+                try
+                {
+                    updateCmbDBsItems(true);                     
+                }
+                catch (Exception ex)
+                {
+                    Console.Out.Write(ex.Message);
+                }
+
+                if (dbHelper.isConnectionAvailable(dbconfig))
+                {
+                    lblTestResult.Text = testSuccess;
+                    this.lblTestResult.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    lblTestResult.Text = testFail;
+                    this.lblTestResult.ForeColor = System.Drawing.Color.Red;
+                }
+            }
         }
 
-        private void btnTest_Click_1(object sender, EventArgs e)
+        private void btnTest_Click(object sender, EventArgs e)
         {
-            DatabaseHelper dbHelper = new DatabaseHelper(db);
-            StringBuilder conn = new StringBuilder("Server={0};Port={1};Uid={2};Pwd={3};");
-            conn.Replace("{0}", txbServer.Text);
-            conn.Replace("{1}", txbPort.Text);
-            conn.Replace("{2}", txbUser.Text);
-            conn.Replace("{3}", txbPassword.Text);
-
-            if (dbHelper.isConnectionAvailable(db, conn.ToString()))
+            mapDbConfig();
+            if (dbHelper.isConnectionAvailableNoDB(dbconfig))
             {
-                this.lblTestResult.Text = testSuccess;
-                this.lblTestResult.ForeColor = System.Drawing.Color.Green;
-                this.btnSave.Enabled = true;
+                lblTestResult.Text = testSuccess;
+                this.lblTestResult.ForeColor = System.Drawing.Color.Green;                
+                updateCmbDBsItems(false);
+                this.lblDbName.Enabled = true;
+                this.cmbDBs.Enabled = true;
             }
             else
             {
-                this.lblTestResult.Text = testFail;
+                lblTestResult.Text = testFail;
                 this.lblTestResult.ForeColor = System.Drawing.Color.Red;
-                this.btnSave.Enabled = false;
-            }
-        }
-
-        private void createDBConfigFile()
-        {
-            string appPath = Application.StartupPath;
-            FileUtil.createFile(DBConfigPath, "");
-        }
-
-        private void readDBConfigFile()
-        {
-            string appPath = Application.StartupPath;
-            List<String> file = FileUtil.openFile(DBConfigPath);
-
-            foreach (String s in file)
-            {
-                if (s.Contains("Server"))
-                    this.txbServer.Text = s.Replace("Server=", "");
-                if (s.Contains("Port"))
-                    this.txbPort.Text = s.Replace("Port=", "");
-                if (s.Contains("User"))
-                    this.txbUser.Text = s.Replace("User=", "");
-                if (s.Contains("Password"))
-                    this.txbPassword.Text = s.Replace("Password=", "");
+                cmbDBs.Items.Clear();
+                this.lblDbName.Enabled = false;
+                this.cmbDBs.Enabled = false;
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string appPath = Application.StartupPath;
-            String file = "";
-            file += "Server="+txbServer.Text+"\n";
-            file += "Port=" + txbPort.Text + "\n";
-            file += "User=" + txbUser.Text + "\n";
-            file += "Password=" + txbPassword.Text + "\n";
-            FileUtil.overWriteFile(DBConfigPath, file);
-            this.dbConnection += "Server=" + txbServer.Text+";";
-            this.dbConnection += "Port=" + txbPort.Text + ";";
-            this.dbConnection += "User=" + txbUser.Text + ";";
-            this.dbConnection += "Password=" + txbPassword.Text + ";";
+            mapDbConfig();
             this.Close();
+        }
+
+        private void mapDbConfig()
+        {
+            dbconfig.Server = txbServer.Text;
+            dbconfig.Port = txbPort.Text;
+            dbconfig.User = txbUser.Text;
+            dbconfig.Password = txbPassword.Text;
+        }
+
+        private void updateCmbDBsItems(bool select)
+        {
+            cmbDBs.Items.Clear();
+            cmbDBs.Text = "";
+            cmbDBs.SelectedIndex = -1;
+            dbHelper = new DatabaseHelper(dbconfig);
+            List<String> dbList = dbHelper.selectDataBases();
+            foreach (String s in dbList)
+            {
+                int index = cmbDBs.Items.Add(s);
+                if (select && s.Equals(dbconfig.DbName))
+                    cmbDBs.SelectedIndex = index;
+            }    
+        }
+
+        private void btnAddDB_Click(object sender, EventArgs e)
+        {
+            AddDBForm addDBForm = new AddDBForm(dbconfig);
+            DialogResult result = addDBForm.ShowDialog();
+            if (DialogResult.OK.Equals(result))
+            {
+                dbconfig.DbName = addDBForm.dbAdded != null && !"".Equals(addDBForm.dbAdded) ? addDBForm.dbAdded : dbconfig.DbName;
+                updateCmbDBsItems(true);
+            }
         }
     }
 }

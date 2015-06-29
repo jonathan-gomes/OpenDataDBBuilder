@@ -78,6 +78,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ChangeTablesForm";
             this.Text = "ChangeTablesForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChangeTablesForm_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

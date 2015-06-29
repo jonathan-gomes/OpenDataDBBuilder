@@ -13,6 +13,7 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
     {
         private static readonly MysqlDao mySQLInstancy = new MysqlDao();
         private static String Conn = "";
+        private static MySqlConnection connectionKeepAlive;
 
         private MysqlDao() { }
 
@@ -65,6 +66,55 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
             return databases;
         }
 
+        public void openDataBaseConn()
+        {
+            connectionKeepAlive = new MySqlConnection(Conn);
+            connectionKeepAlive.Open();
+        }
+        public void closeDataBaseConn()
+        {
+            if (connectionKeepAlive != null)
+                connectionKeepAlive.Close();
+        }
+
+
+        public String executeSQLConnectionKeepAlive(String sql)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, connectionKeepAlive);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return "";
+        }
+
+        public object getOpenConnection()
+        {
+            MySqlConnection conn = new MySqlConnection(Conn);
+            conn.Open();
+            return conn;
+        }
+        public void closeConnection(object conn)
+        {
+            try
+            {
+                ((MySqlConnection)conn).Close();
+            }
+            catch(Exception ex)
+            {
+                Console.Write(ex);
+            }
+        }
+        public void executeSQLConnectionKeepAlive(String sql, object conn)
+        {
+            MySqlCommand cmd = new MySqlCommand(sql, (MySqlConnection)conn);
+            cmd.ExecuteNonQuery();
+        }
+
         public String executeSQL(String sql)
         {
             try
@@ -90,16 +140,16 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
         {
             return getFirstCollumnListFromSQLReturn(sql);
         }
-        public DataTable getTableDescription(String sql)
+        public DataTable getDataTable(String sql)
         {
-            DataTable tableDescription = new DataTable();
+            DataTable dt = new DataTable();
             try
             {
                 MySqlConnection connection = new MySqlConnection(Conn);
                 connection.Open();
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
-                adapter.Fill(tableDescription);
+                adapter.Fill(dt);
                 
                 connection.Close();
             }
@@ -107,7 +157,7 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
             {
                 Console.Out.Write(ex.Message);
             }
-            return tableDescription;
+            return dt;
         }
 
         List<String> getFirstCollumnListFromSQLReturn(String sql)
@@ -135,4 +185,6 @@ namespace OpenDataDBBuilder.DataRepository.Mysql
             return lines;
         }
     }
+
+    
 }

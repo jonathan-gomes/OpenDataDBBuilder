@@ -157,10 +157,10 @@
     <value>Options</value>
   </data>
   <data name="tsiEditColumns" xml:space="preserve">
-    <value>Edit Columns</value>
+    <value>Columns</value>
   </data>
-  <data name="tsiTables" xml:space="preserve">
-    <value>Tables</value>
+  <data name="tsiEdit" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="btnSave" xml:space="preserve">
     <value>Save</value>
@@ -184,10 +184,10 @@
     <value>User:</value>
   </data>
   <data name="testFail" xml:space="preserve">
-    <value>Connection failed!</value>
+    <value>Connection{0}failed!</value>
   </data>
   <data name="testSuccess" xml:space="preserve">
-    <value>Successfull connecion!</value>
+    <value>Successfull{0}connecion!</value>
   </data>
   <data name="SQLPreviewForm" xml:space="preserve">
     <value>SQL Preview</value>
@@ -205,7 +205,7 @@
     <value>Tables</value>
   </data>
   <data name="tsiTablesEdit" xml:space="preserve">
-    <value>Edit Tables</value>
+    <value>Tables</value>
   </data>
   <data name="ChangeColumnForm" xml:space="preserve">
     <value>Edit Columns</value>
@@ -216,8 +216,8 @@
   <data name="lblTypeText" xml:space="preserve">
     <value>Type</value>
   </data>
-  <data name="CreateTablesForm" xml:space="preserve">
-    <value>Create Tables</value>
+  <data name="ExecuteSQLForm" xml:space="preserve">
+    <value>Execute Query</value>
   </data>
   <data name="lblDataBases" xml:space="preserve">
     <value>Databases:</value>
@@ -239,5 +239,122 @@
   </data>
   <data name="errorMsgFK" xml:space="preserve">
     <value>Complete FK for {0} column</value>
+  </data>
+  <data name="lblDatabase" xml:space="preserve">
+    <value>Database:</value>
+  </data>
+  <data name="lblTableColumn" xml:space="preserve">
+    <value>Table or column to be created</value>
+  </data>
+  <data name="lblUsedDB" xml:space="preserve">
+    <value>Selected database</value>
+  </data>
+  <data name="ChangeTablesForm" xml:space="preserve">
+    <value>Edit tables names</value>
+  </data>
+  <data name="btnBackStep" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="btnFinish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="btnNextStep" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="lblDataFile" xml:space="preserve">
+    <value>Data file:</value>
+  </data>
+  <data name="lblDataFileHelp" xml:space="preserve">
+    <value>* file to extract data</value>
+  </data>
+  <data name="lblTemplateFile" xml:space="preserve">
+    <value>Template:</value>
+  </data>
+  <data name="lblTemplateHelp" xml:space="preserve">
+    <value>* skip other settings</value>
+  </data>
+  <data name="lblTextStepOne" xml:space="preserve">
+    <value>Choose files</value>
+  </data>
+  <data name="lblTextStepThree" xml:space="preserve">
+    <value>Set the connection</value>
+  </data>
+  <data name="lblTextStepTwo" xml:space="preserve">
+    <value>Choose your database</value>
+  </data>
+  <data name="msgErrorNoDataFile" xml:space="preserve">
+    <value>No data file selected!</value>
+  </data>
+  <data name="msgErrorInvalidDataFile" xml:space="preserve">
+    <value>Invalid Data File</value>
+  </data>
+  <data name="msgInvalidExtension" xml:space="preserve">
+    <value>File not supported</value>
+  </data>
+  <data name="tsiSaveTemplate" xml:space="preserve">
+    <value>Save Template</value>
+  </data>
+  <data name="InsertDataForm" xml:space="preserve">
+    <value>Insert data</value>
+  </data>
+  <data name="tsiConnection" xml:space="preserve">
+    <value>Connection</value>
+  </data>
+  <data name="tsiInsert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="msgInvalidTemplateConnection" xml:space="preserve">
+    <value>Template has invalid connection settings! Please set your connection</value>
+  </data>
+  <data name="msgInvalidTemplateDataFile" xml:space="preserve">
+    <value>Template file is invalid for the selected data file</value>
+  </data>
+  <data name="btnPreviewInsertValues" xml:space="preserve">
+    <value>Insert Values</value>
+  </data>
+  <data name="btnSetDbConnection" xml:space="preserve">
+    <value>Connection Settings</value>
+  </data>
+  <data name="rbtnDefaultValueText" xml:space="preserve">
+    <value>Insert default value:</value>
+  </data>
+  <data name="rbtnSkipLineText" xml:space="preserve">
+    <value>Skip record</value>
+  </data>
+  <data name="msgSuccessExecuteSQL" xml:space="preserve">
+    <value>SQL command successfully executed!</value>
+  </data>
+  <data name="lblLimit" xml:space="preserve">
+    <value>Limit:</value>
+  </data>
+  <data name="lblCollumnName" xml:space="preserve">
+    <value>Column</value>
+  </data>
+  <data name="lblOnErrorAction" xml:space="preserve">
+    <value>On error action</value>
+  </data>
+  <data name="cbxDeafultValue" xml:space="preserve">
+    <value>Default value:</value>
+  </data>
+  <data name="retInsertRowsError" xml:space="preserve">
+    <value>Error Inserting Rows</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="cbxStopOnError" xml:space="preserve">
+    <value>Stop on error</value>
+  </data>
+  <data name="initialMessageInserting" xml:space="preserve">
+    <value>Insert values?</value>
+  </data>
+  <data name="lblNofConn" xml:space="preserve">
+    <value># of connections</value>
+  </data>
+  <data name="cbxSkipText" xml:space="preserve">
+    <value>Skip</value>
   </data>
 </root>

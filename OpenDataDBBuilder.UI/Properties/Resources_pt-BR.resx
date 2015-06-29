@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnOpenFile" xml:space="preserve">
-    <value>Escolher arquivo</value>
+    <value>Abrir</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Erro: </value>
@@ -157,10 +157,10 @@
     <value>Opções</value>
   </data>
   <data name="tsiEditColumns" xml:space="preserve">
-    <value>Editar Colunas</value>
+    <value>Colunas</value>
   </data>
-  <data name="tsiTables" xml:space="preserve">
-    <value>Tabelas</value>
+  <data name="tsiEdit" xml:space="preserve">
+    <value>Editar</value>
   </data>
   <data name="btnSave" xml:space="preserve">
     <value>Salvar</value>
@@ -184,10 +184,10 @@
     <value>Usuário:</value>
   </data>
   <data name="testFail" xml:space="preserve">
-    <value>Falha na conexão!</value>
+    <value>Falha na{0}conexão!</value>
   </data>
   <data name="testSuccess" xml:space="preserve">
-    <value>Conexão bem-sucedida!</value>
+    <value>Conexão{0}bem-sucedida!</value>
   </data>
   <data name="SQLPreviewForm" xml:space="preserve">
     <value>Vizualização de SQL</value>
@@ -205,7 +205,7 @@
     <value>Tabelas</value>
   </data>
   <data name="tsiTablesEdit" xml:space="preserve">
-    <value>Editar Tabelas</value>
+    <value>Tabelas</value>
   </data>
   <data name="ChangeColumnForm" xml:space="preserve">
     <value>Editar Colunas</value>
@@ -216,8 +216,8 @@
   <data name="lblTypeText" xml:space="preserve">
     <value>Tipo</value>
   </data>
-  <data name="CreateTablesForm" xml:space="preserve">
-    <value>Criação das Tabelas</value>
+  <data name="ExecuteSQLForm" xml:space="preserve">
+    <value>Executar Query</value>
   </data>
   <data name="lblDataBases" xml:space="preserve">
     <value>Bancos:</value>
@@ -239,5 +239,122 @@
   </data>
   <data name="errorMsgFK" xml:space="preserve">
     <value>Complete a FK da coluna {0}</value>
+  </data>
+  <data name="lblDatabase" xml:space="preserve">
+    <value>Banco de dados:</value>
+  </data>
+  <data name="lblTableColumn" xml:space="preserve">
+    <value>Tabela ou coluna a ser criada</value>
+  </data>
+  <data name="lblUsedDB" xml:space="preserve">
+    <value>Banco selecionado</value>
+  </data>
+  <data name="ChangeTablesForm" xml:space="preserve">
+    <value>Edita nomes das tabelas</value>
+  </data>
+  <data name="btnBackStep" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="btnFinish" xml:space="preserve">
+    <value>Finalizar</value>
+  </data>
+  <data name="btnNextStep" xml:space="preserve">
+    <value>Avançar</value>
+  </data>
+  <data name="lblDataFile" xml:space="preserve">
+    <value>Arquivo de dados:</value>
+  </data>
+  <data name="lblDataFileHelp" xml:space="preserve">
+    <value>* arquivo para extração dos dados</value>
+  </data>
+  <data name="lblTemplateFile" xml:space="preserve">
+    <value>Template:</value>
+  </data>
+  <data name="lblTemplateHelp" xml:space="preserve">
+    <value>* pula outras configurações</value>
+  </data>
+  <data name="lblTextStepOne" xml:space="preserve">
+    <value>Escolha os arquivos</value>
+  </data>
+  <data name="lblTextStepThree" xml:space="preserve">
+    <value>Defina a conexão</value>
+  </data>
+  <data name="lblTextStepTwo" xml:space="preserve">
+    <value>Escolha o banco</value>
+  </data>
+  <data name="msgErrorNoDataFile" xml:space="preserve">
+    <value>Nenhum arquivo de dados selecionado!</value>
+  </data>
+  <data name="msgErrorInvalidDataFile" xml:space="preserve">
+    <value>Arquivo de dados inválido</value>
+  </data>
+  <data name="msgInvalidExtension" xml:space="preserve">
+    <value>Arquivo não suportado</value>
+  </data>
+  <data name="tsiSaveTemplate" xml:space="preserve">
+    <value>Salvar Template</value>
+  </data>
+  <data name="InsertDataForm" xml:space="preserve">
+    <value>Inserir dados</value>
+  </data>
+  <data name="tsiConnection" xml:space="preserve">
+    <value>Conexão</value>
+  </data>
+  <data name="tsiInsert" xml:space="preserve">
+    <value>Inserir</value>
+  </data>
+  <data name="msgInvalidTemplateConnection" xml:space="preserve">
+    <value>O template tem configurações de conexão inválidas! Favor configurar sua conexão</value>
+  </data>
+  <data name="msgInvalidTemplateDataFile" xml:space="preserve">
+    <value>O arquivo de template é inválido para o arquivo de dados selecionado!</value>
+  </data>
+  <data name="btnPreviewInsertValues" xml:space="preserve">
+    <value>Inserir Valores</value>
+  </data>
+  <data name="btnSetDbConnection" xml:space="preserve">
+    <value>Configurar conexão</value>
+  </data>
+  <data name="rbtnDefaultValueText" xml:space="preserve">
+    <value>Inserir valor default:</value>
+  </data>
+  <data name="rbtnSkipLineText" xml:space="preserve">
+    <value>Pular registro</value>
+  </data>
+  <data name="msgSuccessExecuteSQL" xml:space="preserve">
+    <value>Comando SQL executado com sucesso!</value>
+  </data>
+  <data name="lblLimit" xml:space="preserve">
+    <value>Limite:</value>
+  </data>
+  <data name="lblCollumnName" xml:space="preserve">
+    <value>Coluna</value>
+  </data>
+  <data name="lblOnErrorAction" xml:space="preserve">
+    <value>Ação para erros</value>
+  </data>
+  <data name="cbxDeafultValue" xml:space="preserve">
+    <value>Valor default:</value>
+  </data>
+  <data name="retInsertRowsError" xml:space="preserve">
+    <value>Erro ao inserir linhas</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="cbxStopOnError" xml:space="preserve">
+    <value>Parar se houver erro</value>
+  </data>
+  <data name="initialMessageInserting" xml:space="preserve">
+    <value>Inserir valores?</value>
+  </data>
+  <data name="lblNofConn" xml:space="preserve">
+    <value># de conexões</value>
+  </data>
+  <data name="cbxSkipText" xml:space="preserve">
+    <value>Pular</value>
   </data>
 </root>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using OpenDataDBBuilder.Business.DB;
+using OpenDataDBBuilder.Business.VO;
 
 using System.Globalization;
 using System.Threading;
@@ -18,13 +19,13 @@ namespace OpenDataDBBuilder.UI
 {
     public partial class AddDBForm : Form
     {
-        String db;
         DatabaseHelper dbHelper;
         public String dbAdded { get; set; }
-        public AddDBForm(String db)
+        public DBConfig dbconfig { get; set; }
+        public AddDBForm(DBConfig dbconfig)
         {
-            this.db = db;
-            dbHelper = new DatabaseHelper(db);
+            this.dbconfig = dbconfig;
+            dbHelper = new DatabaseHelper(dbconfig);
             InitializeComponent();
             getDefaultValues();
             getLocalizedLabelsMessages();

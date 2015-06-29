@@ -61,15 +61,6 @@ namespace OpenDataDBBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to hh.
-        /// </summary>
-        internal static string btnOpenFiletxt {
-            get {
-                return ResourceManager.GetString("btnOpenFiletxt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon icooddb {
@@ -115,6 +106,76 @@ namespace OpenDataDBBuilder.Properties {
         internal static System.Drawing.Bitmap imgoddb {
             get {
                 object obj = ResourceManager.GetObject("imgoddb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgReload {
+            get {
+                object obj = ResourceManager.GetObject("imgReload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgsave {
+            get {
+                object obj = ResourceManager.GetObject("imgsave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgSelectedDB {
+            get {
+                object obj = ResourceManager.GetObject("imgSelectedDB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgstep01 {
+            get {
+                object obj = ResourceManager.GetObject("imgstep01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgstep02 {
+            get {
+                object obj = ResourceManager.GetObject("imgstep02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgstep03 {
+            get {
+                object obj = ResourceManager.GetObject("imgstep03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgTableColumnCreate {
+            get {
+                object obj = ResourceManager.GetObject("imgTableColumnCreate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

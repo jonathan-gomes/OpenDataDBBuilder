@@ -41,6 +41,7 @@
             // 
             // btnOKAddDB
             // 
+            this.btnOKAddDB.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOKAddDB.Location = new System.Drawing.Point(301, 13);
             this.btnOKAddDB.Name = "btnOKAddDB";
             this.btnOKAddDB.Size = new System.Drawing.Size(57, 23);
